@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="home-box">
+         <form method="POST">
+             {% csrf_token %}
+            <h2>Create the Name for your Test:</h2>
+            <input class="name" id="name" type="text" name="name" placeholder="Test name">
+             <h2>`choose complexity for you Test:</h2>
+<!--            <input class="name" id="complexity" type="text" name="complexity" placeholder="Test name">-->
+             <select class="name" name="complexity"  id="complexity">
+                 <option class="name">Choose complexity</option>
+
+                 <option class="name" value="1">hard</option>
+                 <option class="name" value="2">normal</option>
+                 <option class="name" value="3">easy</option>
+                                    </select>
+             <button class="submit"> Submit </button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

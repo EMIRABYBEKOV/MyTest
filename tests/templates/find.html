@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="find-box">
+        <div class="search-header">
+            <form  method="POST" class="form">
+                {% csrf_token %}
+                <input class="search-test" id="test_name" type="text" name="test_name" placeholder="Test name">
+
+            </form>
+            <button class="all-btn" type="submit"
+            onclick="window.location.href = '{% url 'test' %}';">
+                All
+            </button>
+        </div>
+
+        {% for test1 in all_tests %}
+        <div class="test">
+            <a class="test-name" href="{{ test.slug }}">
+                {{ test1.name }}
+            </a>
+            <div class="test-author">
+                {{ test1.author }}
+            </div>
+        </div>
+        {% endfor %}
+
+
+        {% for test in tests %}
+
+        <div class="test">
+            <a class="test-name" href="{{ test.slug }}">
+                {{ test.name }}
+            </a>
+            <div class="test-author">
+                {{ test.author }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

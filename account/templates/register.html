@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <title>MyTest Register</title>
+</head>
+<body>
+    <div class="box">
+        <div class="mytest-text">myTest</div>
+            <form class="form" method="post">
+                {% csrf_token %}
+                <input class="username" id="username" type="text" name="username" placeholder="username">
+                <input  class="password" type="password" id="password" name="password1" placeholder="password">
+                <input  class="password" type="password" id="confirm-password" name="password2" placeholder="confirm password">
+                <button class="login" type="submit" >Register</button>
+                {% for field in registration_form %}
+                <div style="
+                    ">
+                    {% for error in field.errors %}
+                    <p style="
+                    font-style: 'Hind Siliguri', sans-serif;
+                    font-size: 15px;
+                    line-height: 10px;
+                    color: red;
+                    padding-left: 20px
+                    ">{{ error }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                    {% if registration_form.non_field_errors %}
+                    <div class="errors">
+                        <p class="errors" >{{registration_form.non_field_errors}}</p>
+                    </div>
+                </div>
+
+
+				{% endif %}
+            </form>
+        <div class="register">
+            You have account?
+            <a class="register-btn" href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+</body>
+</html>

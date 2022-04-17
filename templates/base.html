@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/test.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/create_test.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <title>Main</title>
+</head>
+<header>
+        <div class="left-section">
+            <a class="mytest-text" href="{% url 'home' %}">
+                myTest
+            </a>
+            {% if not request.user.is_authenticated %}
+            <a class="create-test" href="{% url 'login' %}">
+                Login
+            </a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <a class="create-test" href="{% url 'create_test' %}">
+                Create Test
+            </a>
+            {% endif %}
+        <a class="find-test" href="{% url 'test' %}">
+            Find Test
+        </a>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="right-section">
+            <div class="passed-tests">
+                Passed Tests
+            </div>
+            <div class="count">123</div>
+            <img class="profile-image" onclick="openNav()" src="{{request.user.profile_image.url}}">
+            <div id="myNav" class="overlay">
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <div class="overlay-content">
+                <a class="linkk" href="#">Profile</a>
+                <a class="linkk" href="#">History</a>
+                <a class="linkk" href="#">My Tests</a>
+                <a class="linkk" href="{% url 'logout' %}">Log out</a>
+                </div>
+                <div class="overlay-content under"></div>
+                <button href="javascript:void(0)" class="closebtn" onclick="closeNav()"><div class="lines left-line"></div><div class="lines"></div></button>
+                </div>
+            </div>
+            <script>
+                function openNav() {
+                  document.getElementById("myNav").style.height = "30%";
+                }
+
+                function closeNav() {
+                  document.getElementById("myNav").style.height = "0%";
+                }
+            </script>
+        </div>
+        {% endif %}
+</header>
+<body>
+    {% block content %}
+
+	{% endblock content %}
+</body>
+</html>

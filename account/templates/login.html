@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mytest Login</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <div class="mytest-text">myTest</div>
+            <form class="form" method="post">
+                {% csrf_token %}
+                <input class="username" id="username" type="text" name="username" placeholder="username">
+                <input  class="password" type="password" id="password" name="password" placeholder="password">
+                <button class="login" type="submit">Login</button>
+                {% for field in login_form %}
+
+            </form>
+        <div class="register">
+            Don't have account?
+            <a class="register-btn" href="{% url 'register' %}">Register</a>
+        </div>
+<!--        <p>-->
+<!--				{% for error in field.errors %}-->
+<!--				<p style="color: red">{{ error }}</p>-->
+<!--				{% endfor %}-->
+<!--				</p>-->
+<!--				{% endfor %}-->
+<!--				{% if login_form.non_field_errors %}-->
+<!--				<div style="color: red">-->
+<!--				<p>{{login_form.non_field_errors}}</p>-->
+<!--				</div>-->
+
+<!--				{% endif %}-->
+    </div>
+    
+    
+</body>
+</html>

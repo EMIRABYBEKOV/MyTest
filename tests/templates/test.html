@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="home-box">
+        <h1>{{ test.name }}</h1>
+
+        <div class="test-block">
+            <form  method="POST" action="{% url 'result_page' %}">
+                {% csrf_token %}
+                <input class="none" id="test_name" name="test_name" value="{{ test.name }}">
+                {% for data in  test.get_questions %}
+                <div class="q-block">
+                    <h3 class="question">{{ data.question }}</h3>
+                    <input class="answer" id="{{ data.pk }}" type="text" name="{{ data.pk }}" placeholder="answer">
+                </div>
+                {% endfor %}
+                <button class="submit"> Submit </button>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

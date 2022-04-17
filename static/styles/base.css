@@ -1,0 +1,244 @@
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    margin: 0;
+    background-color: rgb(248, 248, 248);
+    height: 1000px;
+}
+header {
+    width: 100%;
+    background-color: white;
+    border-bottom-style: solid;
+    border-color: gray;
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 70px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.005);
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight:600;
+    align-items: center;
+}
+
+
+.mytest-text {
+    font-family: 'Hubballi', curssive;
+    font-size: 40px;
+    padding-left: 100px;
+    padding-right: 30px;
+    font-weight:600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.find-test {
+    display: block;
+    background-color: rgb(108, 203, 247);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 25px;
+    text-decoration: none;
+    margin-top: 4px;
+    
+}
+
+.create-test {
+    display: block;
+    background-color: rgb(88, 192, 161);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 25px;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+
+.login-link {
+    display: block;
+    background-color: rgb(88, 192, 161);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: rgb(128, 10, 10);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 25px;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+.right-section {
+    padding-right: 100px;
+}
+
+.passed-tests {
+    padding-right: 10px;
+    margin-top: 6px;
+}
+
+.count {
+    padding-right: 40px;
+    font-size: 30px;
+    margin-top: 6px;
+}
+.profile-image {
+    height: 55px;
+    border-radius: 27.5px;
+    cursor: pointer
+}
+@media (max-width: 820px) {
+    .count, .passed-tests {
+        display: none;
+    }
+}
+@media (max-width: 650px) {
+    .mytest-text {
+        padding-left: 0px;
+        font-weight:600;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-section {
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .create-test, .find-test {
+        width: 70px;
+    }
+    .right-section {
+        padding-right: 0px;
+    }
+    .profile-image {
+        height: 40px;
+        border-radius: 20px;
+        margin-left: 20px;
+    }
+    .count, .passed-tests {
+        display: none;
+    }
+}
+
+.overlay {
+    max-height: 175px;
+    height: 0;
+    margin-top: 70px;
+    width: 230px;
+    /* max-width: 200px; */
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    right: 100px;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.7s;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    /* justify-content: center; */
+    align-items: center;
+    border-style: solid;
+    border-right-color: gray;
+    border-left-color: gray;
+    border-bottom: none;
+    border-top: none;
+}
+
+  .overlay-content {
+    top: 25%;
+    width: 100%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-top: 15px;
+
+  }
+  .uneder {
+      margin-top: 0;
+  }
+
+  .linkk {
+      display: inline-block;
+      font-family: 'Hind Siliguri', sans-serif;
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      cursor: pointer;
+  }
+
+  .closebtn {
+      height: 40px;
+      width: 230px;
+      background-color: gray;
+      cursor: pointer;
+
+      display: flex;
+      /* align-items: center; */
+      font-size: 40px;
+      /* display: inline-block; */
+      justify-content: center;
+      margin-top: 0;
+      border-style: solid;
+      border-color: gray;
+
+    }
+
+    .lines {
+        width: 40px;
+        background-color: white;
+        height: 1.5px;
+        border: none;
+        margin-bottom: 4px;
+        padding-bottom: 0;
+    }
+
+    .left-line {
+        margin-bottom: 2px;
+    }
+
+.home-box {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family:  'Hind Siliguri', sans-serif;
+}
+
+.there {
+    line-height: 20px;
+}
+
+.form {
+    display:flex;
+    align-items: center;
+
+}
